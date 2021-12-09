@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $.ajax({
         type: "GET",
-        url: `/api/user/comments`,
+        url: `https://api.tilnew.shop/api/user/comments`,
         success: function (response) {
             for (let i = 0; i < response.length; i++) {
                 let comment = response[i]
@@ -29,7 +29,7 @@ function makeTable(comment){
 function deleteComment(boardId, commentId) {
     $.ajax({
         type: "delete",
-        url: `/api/comment/${commentId}`,
+        url: `https://api.tilnew.shop/api/comment/${commentId}`,
         success: function (response) {
             if(response === "success"){
                 alert("삭제 되었습니다.");

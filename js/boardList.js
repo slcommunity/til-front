@@ -7,7 +7,7 @@ $(document).ready(function () {
 function getArticle(curpage) {
     $.ajax({
         type: "GET",
-        url: `/api/boards/${curpage}`,
+        url: `https://api.tilnew.shop/api/boards/${curpage}`,
         contentType: 'application/json; charset=utf-8',
         success: function (response) {
             let list = response.data;
@@ -38,7 +38,7 @@ function searchBoard(){
     let title = $("#searchBoard").val()
     $.ajax({
         type: "GET",
-        url: `/api/boards/title/${title}`,
+        url: `https://api.tilnew.shop/api/boards/title/${title}`,
         success: function (response){
             let list = response.data;
             let fullCount = response.count;

@@ -50,7 +50,7 @@
             let name = $("#searchName").val()
             $.ajax({
                 type: "GET",
-                url: `/api/users?searchName=${name}`,
+                url: `https://api.tilnew.shop/api/users?searchName=${name}`,
                 data: {},
                 success: function (response) {
                     $("#cards").empty()
@@ -65,7 +65,7 @@
         $(document).ready(function () {
             $.ajax({
                 type: "GET",
-                url: `/api/users`,
+                url: `https://api.tilnew.shop/api/users`,
                 data: {},
                 success: function (response) {
                     for (let i = 0; i < response.length; i++) {

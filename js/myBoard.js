@@ -7,7 +7,7 @@ $(window).on("load resize ", function() {
 $(document).ready(function () {
     $.ajax({
         type: "GET",
-        url: `/api/user/boards`,
+        url: `https://api.tilnew.shop/api/user/boards`,
         success: function (response) {
             for (let i = 0; i < response.length; i++) {
                 let board = response[i]
@@ -34,7 +34,7 @@ function makeTable(board){
 function deleteArticle(idx) {
     $.ajax({
         type: "DELETE",
-        url: `/api/boards/${idx}`,
+        url: `https://api.tilnew.shop/api/boards/${idx}`,
         data: {},
         success: function (response) { // 성공하면
             if(response === "success"){

@@ -11,7 +11,7 @@ $(document).ready(function () {
 function getEditArticle(idx) {
     $.ajax({
         type: "GET",
-        url: `/api/board/${idx}`,
+        url: `https://api.tilnew.shop/api/board/${idx}`,
         beforeSend: function (xhr) {
             xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem('token'));
         },
@@ -32,7 +32,7 @@ function updateArticle() {
 
     $.ajax({
         type: "PUT",
-        url: `/api/boards/${idx}`,
+        url: `https://api.tilnew.shop/api/boards/${idx}`,
         contentType: 'application/json; charset=utf-8',
         data: JSON.stringify(data),
         beforeSend: function (xhr) {
@@ -53,7 +53,7 @@ function updateArticle() {
 function deleteArticle() {
     $.ajax({
         type: "DELETE",
-        url: `/api/boards/${idx}`,
+        url: `https://api.tilnew.shop/api/boards/${idx}`,
         beforeSend: function (xhr) {
             xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem('token'));
         },

@@ -27,7 +27,7 @@
         $(document).ready(function () {
             $.ajax({
                 type: "POST",
-                url: "/api/roles",
+                url: "https://api.tilnew.shop/api/roles",
                 data: {"userId": localStorage.getItem("userId")},
                 success: function (response) { // 성공하면
                     if(response === "admin"){

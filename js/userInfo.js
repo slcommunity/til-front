@@ -36,7 +36,7 @@ function updateInfo() {
 
     $.ajax({
         type: "PUT",
-        url: "/api/user",
+        url: "https://api.tilnew.shop/api/user",
         data: formData,
         processData: false, // 필수
         contentType: false, // 필수
