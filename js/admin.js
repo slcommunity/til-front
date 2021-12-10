@@ -92,7 +92,7 @@ function setListType(type) {
 function showUsers(curPage) {
     $.ajax({
         type: "GET",
-        url: `/api/admin/user?userTurnInfo=${userTurnInfo}&curPage=${curPage}&searchWord=${searchTitle}`,
+        url: `https://api.tilnew.shop/api/admin/user?userTurnInfo=${userTurnInfo}&curPage=${curPage}&searchWord=${searchTitle}`,
         success: function (response) {
             $('#list-user').empty();
             for (let i = 0; i < response.data.length; i++) {
