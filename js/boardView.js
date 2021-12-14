@@ -33,7 +33,6 @@ function setArticleComment(idx) {
         success: function (response) {
             $("#comment-list").empty();
             for (let i = 0; i < response.length; i++) {
-                console.log(response[i])
                 makeListPost(response[i], idx);
             }
         }
