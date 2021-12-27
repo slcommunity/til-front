@@ -6,7 +6,7 @@ function pageload() {
 
     $.ajax({
         type: "GET",
-        url: "https://api.tilnew.shop/api/posts",
+        url: "http://api.tilnew.shop/api/posts",
         data: {},
         success: function (data) {
             $("#postlist").empty();
@@ -19,7 +19,7 @@ function pageload() {
                                             <img src="image/default-image.jpg" alt="">
                                         </div>
                                     <div class="post-content">
-                                        <a href="${data[i].postLink}"><h3 class="post-title">${data[i].title}</h3></a>
+                                        <a href="${data[i].postLink}" target='_blank'><h3 class="post-title">${data[i].title}</h3></a>
                                         <div><p>${data[i].user.username}</p></div>
                                             <div class="post-excerpt">
                                                 <p>${data[i].summary}</p>
@@ -33,7 +33,7 @@ function pageload() {
                                             <img src="${imageUrl}" alt="">
                                         </div>
                                     <div class="post-content">
-                                        <a href="${data[i].postLink}"><h3 class="post-title">${data[i].title}</h3></a>
+                                        <a href="${data[i].postLink}" target='_blank'><h3 class="post-title">${data[i].title}</h3></a>
                                             <div><p>${data[i].user.username}</p></div>
                                             <div class="post-excerpt">
                                                 <p>${data[i].summary}</p>
@@ -61,11 +61,12 @@ function search() {
 
     $.ajax({
         type: "GET",
-        url: `https://api.tilnew.shop/api/posts/${searchtext}`,
+        url: `http://api.tilnew.shop/api/posts/${searchtext}`,
         data : { searchtext : searchtext,
             selecter : seletOption},
         success: function (data) {
             if (data.length == 0) {
+                alert("검색결과가 없습니다.")
                 return;
             }
             $('#postlist').empty();
@@ -78,7 +79,7 @@ function search() {
                                             <img src="image/default-image.jpg" alt="">
                                         </div>
                                     <div class="post-content">
-                                        <a href="${data[i].postLink}"><h3 class="post-title">${data[i].title}</h3></a>
+                                        <a href="${data[i].postLink}" target='_blank'><h3 class="post-title">${data[i].title}</h3></a>
                                         <div><p>${data[i].user.username}</p></div>
                                             <div class="post-excerpt">
                                                 <p>${data[i].summary}</p>
@@ -92,7 +93,7 @@ function search() {
                                             <img src="${imageUrl}" alt="">
                                         </div>
                                     <div class="post-content">
-                                        <a href="${data[i].postLink}"><h3 class="post-title">${data[i].title}</h3></a>
+                                        <a href="${data[i].postLink}" target='_blank'><h3 class="post-title">${data[i].title}</h3></a>
                                             <div><p>${data[i].user.username}</p></div>
                                             <div class="post-excerpt">
                                                 <p>${data[i].summary}</p>
