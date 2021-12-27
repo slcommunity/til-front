@@ -63,12 +63,12 @@ function makeListPost(board, num) {
     let modi = board.modifiedAt;
     let mode = modi.substr(0,10);
     let idx = board.boardIdx;
-    let name = board.user.username;
+    let username = board.user.username;
 
     let tempHtml = `<div onclick="window.location.href='boardView.html?boardIdx=${idx}'">
                             <div class="num">${num}</div>
                             <div class="title">${title}</a></div>
-                            <div class="writer">${name}</div>
+                            <div class="writer">${username}</div>s
                             <div class="date">${mode}</div>
                         </div>`;
     $("#board-list").append(tempHtml);
