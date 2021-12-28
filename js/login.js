@@ -52,21 +52,21 @@ function register() {
         $("#name").focus()
         return;
     }
-    if(!blog){
-        alert("블로그 주소는 필수 입력값 입니다.")
-        $("#blog").focus()
-        return;
-    }
-    if(!github){
-        alert("깃헙 주소는 필수 입력값 입니다.")
-        $("#github").focus()
-        return;
-    }
-  //  if(!turn) {
+   //  if(!blog){
+   //      alert("블로그 주소는 필수 입력값 입니다.")
+   //      $("#blog").focus()
+   //      return;
+   //  }
+   //  if(!github){
+   //      alert("깃헙 주소는 필수 입력값 입니다.")
+   //      $("#github").focus()
+   //      return;
+   //  }
+   // if(!turn) {
    //     alert("기수를 선택해주세요.")
    //     $("#turnSelect").focus()
    //     return;
-    //}
+   //  }
     if(!$("#userID").hasClass("is-safe")){
         alert("ID 중복확인을 해주세요.")
         return;
@@ -82,14 +82,16 @@ function register() {
     }
     $.ajax({
         type: 'POST',
+        // url: `https://api.tilnew.shop/api/user/sign-up`,
         url: `https://api.tilnew.shop/api/user/sign-up`,
         contentType: "application/json",
         data: JSON.stringify(info),
         success: function (response) {
             location.href = '/login.html';
         },
-        error: function (response) {
-            alert("회원가입이 불가합니다. 관리자에게 문의하세요.")
+        error: function (xqXHR) {
+            let res = JSON.parse(xqXHR.responseText)
+            alert(res.message)
         },
     })
 }

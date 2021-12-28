@@ -47,6 +47,10 @@ function updateInfo() {
         success: function (response) { // 성공하면
             alert("회원정보 수정 완료!");
             window.location.href = 'index.html'
-        }
+        },
+        error: function (xqXHR) {
+            let res = JSON.parse(xqXHR.responseText)
+            alert(res.message)
+        },
     })
 }
