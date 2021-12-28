@@ -6,7 +6,7 @@ function pageload() {
 
     $.ajax({
         type: "GET",
-        url: "http://api.tilnew.shop/api/posts",
+        url: "https://api.tilnew.shop/api/posts",
         data: {},
         success: function (data) {
             $("#postlist").empty();
@@ -61,7 +61,7 @@ function search() {
 
     $.ajax({
         type: "GET",
-        url: `http://api.tilnew.shop/api/posts/${searchtext}`,
+        url: `https://api.tilnew.shop/api/posts/${searchtext}`,
         data : { searchtext : searchtext,
             selecter : seletOption},
         success: function (data) {
