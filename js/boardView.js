@@ -80,7 +80,11 @@ function saveComment() {
         success: function (response) {
             alert('작성 완료!');
             setArticleComment(idx);
-        }
+        },
+        error: function (xqXHR) {
+            let res = JSON.parse(xqXHR.responseText)
+            alert(res.message)
+        },
     })
 
 }

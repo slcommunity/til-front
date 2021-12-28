@@ -14,7 +14,11 @@ function postArticle() {
         success: function (response) {
             alert('작성 완료!');
             location.href = "/boardList.html";
-        }
+        },
+        error: function (xqXHR) {
+            let res = JSON.parse(xqXHR.responseText)
+            alert(res.message)
+        },
     })
 
 }

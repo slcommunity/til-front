@@ -215,7 +215,11 @@ function completeModifyTurn(fromName) {
             success: function (response) {
                 alert("추가 성공!");
                 showTurn();
-            }
+            },
+            error: function (xqXHR) {
+                let res = JSON.parse(xqXHR.responseText)
+                alert(res.message)
+            },
         })
     } else {
         $.ajax({
@@ -226,7 +230,11 @@ function completeModifyTurn(fromName) {
             success: function (response) {
                 alert("변경 성공!");
                 showTurn();
-            }
+            },
+            error: function (xqXHR) {
+                let res = JSON.parse(xqXHR.responseText)
+                alert(res.message)
+            },
         })
     }
 }
@@ -360,7 +368,11 @@ function completeModifyUrl(url, urlName, urlSection, turn) {
             url: `https://api.tilnew.shop/api/admin/url?url=${toUrl2}&urlName=${toUrlName2}&turn=${turnInfo}&urlSection=${urlSection}`,
             success: function (response) {
                 showUrls(turnInfo);
-            }
+            },
+            error: function (xqXHR) {
+                let res = JSON.parse(xqXHR.responseText)
+                alert(res.message)
+            },
         })
     } else {
         $.ajax({
@@ -368,7 +380,11 @@ function completeModifyUrl(url, urlName, urlSection, turn) {
             url: `https://api.tilnew.shop/api/admin/url?urlname=${urlName}&url=${url}&tourl=${toUrl}&tourlname=${toUrlName}&turn=${turn}`,
             success: function (response) {
                 showUrls(turnInfo);
-            }
+            },
+            error: function (xqXHR) {
+                let res = JSON.parse(xqXHR.responseText)
+                alert(res.message)
+            },
         })
     }
 }
