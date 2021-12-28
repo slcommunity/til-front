@@ -20,11 +20,12 @@ function getArticle(idx) {
             $("#title").text(response['title']);
             $("#content").text(response['content']);
             $("#boardIdx").text(response['boardIdx']);
-            $("#createdAt").text(response['createdAt']);
-            $("#username").text(response['user'].name);
+            $("#createdAt").text(response['createdAt'].substring(0,10));
+            $("#username").text(response['user'].username);
         }
     })
 }
+
 
 function setArticleComment(idx) {
     $.ajax({
