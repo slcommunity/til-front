@@ -15,7 +15,15 @@
     <link rel="icon" href="image/favicon.ico" type="image/x-icon" sizes="16x16">
 
     <script>
-
+        $(document).ready(function () {
+            $.keepalive =
+                setInterval(function () {
+                    $.ajax({
+                        url: '/ping.html',
+                        cache: false
+                    });
+                }, 60000);
+        });
     </script>
 </head>
 <body>
